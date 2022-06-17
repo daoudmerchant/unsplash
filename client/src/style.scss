@@ -1,0 +1,151 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%
+}
+
+p {
+    margin: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: grid;
+    grid-template-rows: repeat(2, min-content) 1fr repeat(2, min-content);
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: pink;
+    top: 0;
+    .nav {
+        font-size: 2em;
+        padding-block: .8em
+    }
+}
+
+.main {
+    overflow-y: scroll;
+}
+
+.form {
+    display: flex;
+    justify-content: center;
+    .input {
+        padding: 1em;
+        margin-block: 2em;
+        width: calc(100% - 25em);
+        min-width: 330px;
+    }
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding-block: 1em;
+
+    &__button {
+        padding-block: 1em;
+        width: 10em;
+    }
+    &__counter {
+        width: 2em;
+        text-align: center;
+    }
+}
+
+.gallery-container {
+    background-color: aliceblue;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    padding: 1em;
+    .image {
+        max-width: 100%;
+        max-height: 100%;
+    }
+}
+
+.card {
+    flex-grow: 1;
+    width: 300px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0px 8px 15px 0px rgba(0,0,0,0.3);
+    position: relative;
+    &--empty {
+        background-color: rgb(243, 243, 243);
+        box-shadow: none;
+    }
+    &__info {
+        position: absolute;
+        width: calc(100% - 1em);
+        height: calc(100% - 1em);
+        background-color: white;
+        opacity: 0;
+        transition: .2s all;
+        display: grid;
+        grid-template-rows: 4fr 1fr 1fr;
+        font-style: italic;
+        color: grey;
+        padding: 1em;
+        &:hover {
+            opacity: 100%;
+        }
+    }
+    &__description {
+        font-size: 1.2em;
+        font-style: normal;
+    }
+    &__extra-info {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__photographer {
+        padding-top: 1em;
+        text-align: right;
+    }
+    &__socials {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        a {
+            &, &:hover, &:visited {
+                text-decoration: none;
+            }
+        }
+    }
+    &__icon {
+        height: 25px;
+        margin-inline: 3px;
+    }
+    &__date {
+        font-size: .8em;
+    }
+}
+
+.footer {
+    background-color: gainsboro;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    &__icon {
+        height: 40px;
+    }
+}
